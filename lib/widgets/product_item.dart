@@ -25,9 +25,14 @@ class ProductItem extends StatelessWidget {
               arguments: product.id,
             );
           },
-          child: Image.network(
-            product.imageUrl,
-            fit: BoxFit.cover,
+          child: Hero(
+            tag: product.id,
+            child: FadeInImage.assetNetwork(
+              alignment: Alignment.bottomCenter,
+              placeholder: 'assets/images/Spin-1.3s.gif',
+              image: product.imageUrl,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         footer: GridTileBar(
